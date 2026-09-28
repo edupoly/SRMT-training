@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        // var a = 99;
+        // var b = 13;
+
+        // [a, b] = [b, a]
+        // console.log(a);
+
+        // var hr = ['mamitha', 'rukmini', 'samantha', "rani", "vani"]
+
+        // var [x, y, ...w] = hr
+
+        // console.log(w);
+
+        // var ar = [10, 20, 40, 30]
+        // var [a, b, c] = ar
+        // // var b = ar[1]
+        // console.log(a, b);
+        // console.log(c);
+
+        // var ar = [10, 20, 40, 30]
+        // var br = [11, 22, 33, 44]
+        // var hr = [12, 23, 34, 45]
+        // var cr = ar.concat(br, hr)
+        // var dr = [...ar, ...br, ...hr]
+        // console.log(cr);
+        // console.log(dr);
+
+        var ob1 = {
+            firstname: 'sridevi',
+            lastname: "kapoor",
+            husband: "boney kapoor",
+            address: {
+                pincode: 250008
+            },
+            kids: ["jahnavi", "kushi"]
+        }
+
+        var { lastname, address: { pincode } } = ob1;
+
+        console.log(pincode);
+
+        console.log(ob1.address.pincode);
+
+        // console.log(lastname);
+        // console.log(ob1.lastname);
+        // console.log(ob1);
+
+        // var { husband, ...ob1 } = ob1;
+        // console.log(ob1);
+
+        // ob1 = { ...ob1, age: 44 }
+
+        // var ob2 = {
+        //     age: 54,
+        //     place: "mumbai"
+        // }
+        // var ob3 = { ...ob1, ...ob2 }//ob1.concat(ob2)
+        // console.log(ob3);
+    </script>
+</body>
+
+</html>

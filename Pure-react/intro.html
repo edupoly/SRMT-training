@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <style>
+        .male {
+            background-color: lightblue;
+            font-style: italic;
+        }
+
+        .female {
+            background-color: pink;
+            font-weight: bold;
+        }
+
+        img {
+            width: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Welcome to Disney World {10+20}</h1>
+    <div id="d1"></div>
+    <script type="text/babel">
+        var people = [
+
+            {
+
+                "firstname": "praveen",
+
+                "lastname": "gubbala",
+
+                "age": 36,
+
+                "gender": "male",
+
+                "city": "hyd",
+
+                "salary": 10000
+
+            },
+
+            {
+
+                "firstname": "srikanth",
+
+                "lastname": "gubbala",
+
+                "age": 32,
+
+                "gender": "male",
+
+                "city": "bengaluru",
+
+                "salary": 20000
+
+            },
+
+            {
+
+                "firstname": "pradeep",
+
+                "lastname": "reddy",
+
+                "age": 21,
+
+                "gender": "male",
+
+                "city": "hyd",
+
+                "salary": 25000
+
+            },
+
+            {
+
+                "firstname": "mounika",
+
+                "lastname": "mudiraj",
+
+                "age": 20,
+
+                "gender": "female",
+
+                "city": "nalgonda",
+
+                "salary": 30000
+
+            },
+
+            {
+
+                "firstname": "nikhil",
+
+                "lastname": "m",
+
+                "age": 22,
+
+                "gender": "male",
+
+                "city": "guntur",
+
+                "salary": 2000
+
+            },
+
+            {
+
+                "firstname": "riya",
+
+                "lastname": "bhadouria",
+
+                "age": 14,
+
+                "gender": "female",
+
+                "city": "indore",
+
+                "salary": 40000
+
+            }
+
+        ]
+
+        function sortAndGen(k) {
+            //sort the data based on k
+            people.sort(function (ob1, ob2) {
+                if (ob1[k] > ob2[k]) { return 1 }
+                else { return -1 }
+            })
+            //generate the ui again
+            genUI()
+        }
+        function genUI() {
+            var ptable = <table border="2">
+                <thead>
+                    <tr>
+                        <th>Firstname</th>
+                        <th>Lastname</th>
+                        <th onClick={() => { sortAndGen('city') }}>City</th>
+                        <th onClick={() => { sortAndGen('age') }}>Age</th>
+                        <th onClick={() => { sortAndGen('salary') }}>Salary</th>
+                        <th>Gender</th>
+                    </tr>
+                </thead>
+                {
+                    people.map((p) => {
+                        return <tr className={p.gender === 'male' ? 'male' : 'female'}>
+                            <td>{p.firstname}</td>
+                            <td>{p.lastname}</td>
+                            <td>{p.city}</td>
+                            <td>{p.age}</td>
+                            <td>{p.salary}</td>
+                            <td>{p.gender}</td>
+                            <td>
+                                {
+                                    p.gender === 'male' && <img src="https://static.vecteezy.com/system/resources/previews/001/840/612/non_2x/picture-profile-icon-male-icon-human-or-people-sign-and-symbol-free-vector.jpg" />
+                                }
+                                {
+                                    p.gender === 'female' && <img src="https://static.vecteezy.com/system/resources/previews/042/332/098/non_2x/default-avatar-profile-icon-grey-photo-placeholder-female-no-photo-images-for-unfilled-user-profile-greyscale-illustration-for-socail-media-web-vector.jpg" />
+                                }
+
+                            </td>
+                        </tr>
+                    })
+                }
+            </table>
+            ReactDOM.render(ptable, document.getElementById("d1"))
+        }
+        genUI();
+    </script>
+</body>
+
+</html>

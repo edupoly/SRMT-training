@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const products = [
+            {
+                title: "iPhone 15",
+                price: 69999,
+                discount: 10
+            },
+            {
+                title: "Samsung Galaxy S24",
+                price: 74999,
+                discount: 15
+            },
+            {
+                title: "OnePlus 12",
+                price: 59999,
+                discount: 12
+            },
+            {
+                title: "Google Pixel 8",
+                price: 64999,
+                discount: 20
+            },
+            {
+                title: "Nothing Phone 2",
+                price: 39999,
+                discount: 8
+            },
+            {
+                title: "MacBook Air M2",
+                price: 99999,
+                discount: 10
+            },
+            {
+                title: "Dell Inspiron 15",
+                price: 65999,
+                discount: 18
+            },
+            {
+                title: "Sony WH-1000XM5",
+                price: 29999,
+                discount: 25
+            },
+            {
+                title: "Apple Watch Series 9",
+                price: 44999,
+                discount: 15
+            },
+            {
+                title: "Samsung 55-inch Smart TV",
+                price: 69999,
+                discount: 22
+            }
+        ];
+
+        products.sort(function (a, b) {
+            if (a.discount > b.discount) {
+                return 1
+            }
+            else {
+                return -1
+            }
+        })
+
+        console.log(products);
+
+        // var nar = products.map(function (p) {
+        //     p.finalPrice = p.price - (p.price * p.discount * 0.01)
+        //     return p
+        // })
+        // console.log(nar);
+
+        // var ob = {
+        //     firstname: "praveen",
+        //     lastname: "gubbala"
+        // }
+
+        // ob.age = 43
+        // ob.gender = 'male'
+        // console.log(ob);
+    </script>
+</body>
+
+</html>

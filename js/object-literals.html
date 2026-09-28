@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var ob = {
+            firstname: "praveen",
+            lastname: "gubbala",
+            age: 43,
+            place: "Hyderabad",
+            like: "biryani",
+            hobbies: "cricket"
+        }
+        //Object literal
+
+        console.log(ob.firstname);
+        console.log(ob.lastname);
+        console.log(ob["age"]);
+
+        for (var k in ob) {
+            console.log("hello", k, ob[k]);
+        }
+    </script>
+</body>
+
+</html>
