@@ -40,6 +40,11 @@
             function dec() {
                 setC(c - +props.b)
             }
+            React.useEffect(() => {
+                console.log("india")
+                return () => { console.log("goa") }
+            }, [])
+            React.useEffect(() => { console.log("tamilnadu") })
             //ui
             return (
                 <div id="cnt">
@@ -54,7 +59,7 @@
         }
         ReactDOM.render(<div>
             <Counter a={10} b={5}> </Counter>
-            <Counter a={20} b={10}> </Counter>
+
         </div>, document.getElementById("d1"))
     </script>
 </body>

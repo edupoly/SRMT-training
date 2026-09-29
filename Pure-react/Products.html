@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <style>
+        body {
+            margin: 0px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        #products {
+            border: 2px solid green;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="d1"></div>
+    <script type="text/babel">
+        function Products() {
+            var [d, setD] = React.useState([])
+            React.useEffect(() => {
+                fetch("https://dummyjson.com/products")
+                    .then(function (res) { return res.json() })
+                    .then(function (data) {
+                        setD([...data.products])
+                    })
+            }, [])
+
+            return (
+                <div id="products">
+                    <h1>Products</h1>
+                    <ul>
+                        {
+                            d.map(function (product) {
+                                return <li>{product.title}</li>
+                            })
+                        }
+                    </ul>
+                </div>
+            )
+        }
+        ReactDOM.render(<Products></Products>, document.getElementById("d1"))
+    </script>
+</body>
+
+</html>
