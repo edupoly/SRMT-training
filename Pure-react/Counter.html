@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <style>
+        body {
+            margin: 0px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        #cnt {
+            border: 3px solid;
+            width: 300px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="d1"></div>
+    <script type="text/babel">
+        function Counter() {
+            //state
+            var [c, setC] = React.useState(0)
+
+            //action
+            function inc() {
+                setC(c + 1)
+
+            }
+            function dec() {
+                c--
+            }
+
+            //ui
+            return (
+                <div id="cnt">
+                    <h1>Counter:{c}</h1>
+                    <div>
+                        <button onClick={() => { inc() }}>Increment</button>
+                        <button>Decrement</button>
+                    </div>
+                </div>
+            )
+        }
+        ReactDOM.render(<Counter></Counter>, document.getElementById("d1"))
+    </script>
+</body>
+
+</html>

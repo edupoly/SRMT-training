@@ -11,6 +11,7 @@
     <style>
         body {
             margin: 0px;
+            font-family: Arial, Helvetica, sans-serif;
         }
 
         #d2 {
@@ -33,6 +34,17 @@
 
         #d2 ul li {
             width: 200px
+        }
+
+        #hsd {
+            width: 100%;
+            height: 300px;
+            padding: 20px 200px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: rgb(221, 221, 221);
         }
     </style>
 </head>
@@ -60,7 +72,25 @@
                 </div>
             )
         }
-        ReactDOM.render(<Navbar></Navbar>, document.getElementById("d1"))
+        function HeroSection() {
+            return (
+                <div id="hsd">
+                    <h1>Best Ecom APP in the world</h1>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur deleniti quibusdam eligendi et sunt doloribus delectus. Quasi nesciunt nobis ab reprehenderit saepe tempora quidem iure, alias quisquam delectus quos voluptate?</p>
+                    <div>
+                        <button>Read More</button>
+                        <button>Goto Cart</button>
+                    </div>
+                </div>
+            )
+        }
+        function App() {
+            return (<div>
+                <Navbar></Navbar>
+                <HeroSection></HeroSection>
+            </div>)
+        }
+        ReactDOM.render(<App></App>, document.getElementById("d1"))
     </script>
 </body>
 
