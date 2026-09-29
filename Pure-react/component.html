@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <style>
+        body {
+            margin: 0px;
+        }
+
+        #d2 {
+            width: 100%;
+            height: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border: 1px solid;
+        }
+
+        #d2 img {
+            height: 100%;
+        }
+
+        #d2 ul {
+            display: flex;
+            list-style: none;
+        }
+
+        #d2 ul li {
+            width: 200px
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="d1"></div>
+    <script type="text/babel">
+        function Navbar() {
+            //state
+            var logo = "https://img.magnific.com/free-vector/colorful-store-icon-abstract-logo-design_474888-3415.jpg?semt=ais_hybrid&w=740&q=80"
+            var navitems = ['Home', 'Aboutus', 'Contactus', 'Featured', 'Services']
+            //action
+            //ui
+            return (
+                <div id='d2'>
+                    <img src={logo} alt="" />
+                    <ul>
+                        {
+                            navitems.map((item) => {
+                                return <li>{item}</li>
+                            })
+                        }
+                    </ul>
+                </div>
+            )
+        }
+        ReactDOM.render(<Navbar></Navbar>, document.getElementById("d1"))
+    </script>
+</body>
+
+</html>
