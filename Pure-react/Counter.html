@@ -29,19 +29,17 @@
 
     <div id="d1"></div>
     <script type="text/babel">
-        function Counter() {
-            //state
-            var [c, setC] = React.useState(0)
+        function Counter(props) {
 
+            //state
+            var [c, setC] = React.useState(+props.a)
             //action
             function inc() {
-                setC(c + 1)
-
+                setC(c + +props.b)
             }
             function dec() {
-                c--
+                setC(c - +props.b)
             }
-
             //ui
             return (
                 <div id="cnt">
@@ -51,9 +49,13 @@
                         <button>Decrement</button>
                     </div>
                 </div>
+
             )
         }
-        ReactDOM.render(<Counter></Counter>, document.getElementById("d1"))
+        ReactDOM.render(<div>
+            <Counter a={10} b={5}> </Counter>
+            <Counter a={20} b={10}> </Counter>
+        </div>, document.getElementById("d1"))
     </script>
 </body>
 

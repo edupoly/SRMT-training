@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <style>
+        body {
+            margin: 0px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="d1"></div>
+    <script type="text/babel">
+        function Gallery() {
+
+            var [ind, setInd] = React.useState(0)
+            var heroines = ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtozESnAaNklkNYnlRFx5kX-Cs6NslOxK0TGccwFjS_INmHOuY6AYh0t8NsghkpxHWiWI-gNC_nAmRlKD3iKqAF49kwdI-17dn5HucoVo&s=10", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4i0HpCkUq8UVqn2GwU7f_M1xvDx1beSvm8Ej3TYwk89dIbVNVqrwgQ1aPOX2fxTqBe4uSj4plHbECFUzv2WVI5D1m-nBLSH7gz2GeYqU&s=10", "https://static.toiimg.com/thumb/msid-131273529,width-1280,height-720,imgsize-91662,resizemode-4,overlay-toi_sw,pt-32,y_pad-600/photo.jpg"]
+            function nextImg() {
+                setInd(ind + 1)
+            }
+            function prevImg() {
+                setInd(ind - 1)
+            }
+            return (
+                <div>
+                    <img src={heroines[ind]} alt="" height="200px" />
+                    <br />
+                    <button onClick={() => { prevImg() }}>Prev</button>
+                    <button onClick={() => { nextImg() }}>Next</button>
+                </div>
+            )
+        }
+        ReactDOM.render(<div>
+            <Gallery></Gallery>
+
+
+        </div>, document.getElementById("d1"))
+    </script>
+</body>
+
+</html>
+["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3wQT6eNeg4DeIuzJscbBUAuyFPIFpLu7Kjz9nUnM3Y5wcgmxHZJhVvDrBUSiG9lYPOCysjsUpZtJzlYhRD_xM10Tu2AwjuXBL5sLN5Jbe-g&s=10","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvOsZ5H_rYLugIoEPNP_5m0m0S8Y5eeB4YXpNbmFGAVgT0AIqwQKLwm0YR66bnLhqptmQqLXLNr4wXd-5McI46PFgPcNVLvjRnvdWEMs4&s=10","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCB3OFBMxgsW6AO4vEfbqU9P8L6piGbmuOeujwGW9clhvw9SodBniYAT22hCZKEOYkW275cT4BZFZcAVjS0mhoCzemjNYu3tuBVge-NeDv&s=10"]
