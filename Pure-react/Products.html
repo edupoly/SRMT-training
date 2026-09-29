@@ -18,6 +18,24 @@
             border: 2px solid green;
             padding: 20px;
         }
+
+        #products ul {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+        }
+
+        #products ul li {
+            width: 150px;
+            list-style: none;
+            padding: 10px;
+            border: 1px solid gainsboro;
+            margin: 10px;
+        }
+
+        #products ul li img {
+            width: 100%;
+        }
     </style>
 </head>
 
@@ -41,7 +59,10 @@
                     <ul>
                         {
                             d.map(function (product) {
-                                return <li>{product.title}</li>
+                                return <li>
+                                    <b>{product.title}</b>
+                                    <img src={product.thumbnail} alt="" />
+                                </li>
                             })
                         }
                     </ul>
